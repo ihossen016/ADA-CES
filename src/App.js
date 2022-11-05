@@ -14,27 +14,38 @@ import Signin from "./component/Signin";
 import Page1 from "./pages/page1";
 import Page2 from "./pages/page2";
 import Page3 from "./pages/page3";
+import { useState } from "react";
 
 function App() {
     const { currentUser } = useSelector(state => state.user);
 
-    const isAdmin = false;
-    const isModerator = false;
-    const isParent = false;
-    const isChild = false;
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isModerator, setIsModerator] = useState(false);
+    const [isParent, setIsParent] = useState(false);
+    const [isChild, setIsChild] = useState(true);
 
     console.log("user", currentUser);
 
     return (
         <div className="App">
             <Router>
-                <Navbar />
+                <Navbar
+                    isAdmin={isAdmin}
+                    isChild={isChild}
+                    isModerator={isModerator}
+                    isParent={isParent}
+                />
                 <Routes>
                     <Route
                         path="/"
                         element={
                             currentUser ? (
-                                <Dasboard />
+                                <Dasboard
+                                    isAdmin={isAdmin}
+                                    isChild={isChild}
+                                    isModerator={isModerator}
+                                    isParent={isParent}
+                                />
                             ) : (
                                 <Navigate replace to="/login" />
                             )
@@ -62,6 +73,97 @@ function App() {
                     />
                     <Route
                         path="notification"
+                        element={
+                            currentUser ? (
+                                <Page3 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+
+                    <Route
+                        path="child-info"
+                        element={
+                            currentUser ? (
+                                <Page1 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="child-profile"
+                        element={
+                            currentUser ? (
+                                <Page2 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="child-notification"
+                        element={
+                            currentUser ? (
+                                <Page3 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="parent-info"
+                        element={
+                            currentUser ? (
+                                <Page1 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="parent-profile"
+                        element={
+                            currentUser ? (
+                                <Page2 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="parent-notification"
+                        element={
+                            currentUser ? (
+                                <Page3 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="moderator-info"
+                        element={
+                            currentUser ? (
+                                <Page1 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="moderator-profile"
+                        element={
+                            currentUser ? (
+                                <Page2 />
+                            ) : (
+                                <Navigate replace to="/login" />
+                            )
+                        }
+                    />
+                    <Route
+                        path="moderator-notification"
                         element={
                             currentUser ? (
                                 <Page3 />

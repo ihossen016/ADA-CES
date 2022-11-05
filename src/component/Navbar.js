@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logout } from "../redux/userSlice";
-const Navbar = () => {
+const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
     const { currentUser } = useSelector(state => state.user);
 
     const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const Navbar = () => {
                             </label>
                         </div>
 
-                        {currentUser && (
+                        {currentUser && isAdmin && (
                             <div className="navmenu hidden w-full flex-wrap justify-end items-center mb-16 space-y-8 p-6 border border-gray-100 rounded-3xl shadow-2xl shadow-gray-300/20 bg-white dark:bg-gray-800 lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none dark:shadow-none dark:border-gray-700 lg:border-0">
                                 <div className="text-gray-600 dark:text-gray-300 lg:pr-4">
                                     <ul className="space-y-6 tracking-wide font-medium text-base lg:text-md lg:flex lg:space-y-0">
@@ -76,6 +76,156 @@ const Navbar = () => {
                                         <li>
                                             <NavLink
                                                 to="/notification"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Notification</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/login"
+                                                onClick={logoutHandler}
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Logout</span>
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        )}
+
+                        {currentUser && isModerator && (
+                            <div className="navmenu hidden w-full flex-wrap justify-end items-center mb-16 space-y-8 p-6 border border-gray-100 rounded-3xl shadow-2xl shadow-gray-300/20 bg-white dark:bg-gray-800 lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none dark:shadow-none dark:border-gray-700 lg:border-0">
+                                <div className="text-gray-600 dark:text-gray-300 lg:pr-4">
+                                    <ul className="space-y-6 tracking-wide font-medium text-base lg:text-md lg:flex lg:space-y-0">
+                                        <li>
+                                            <NavLink
+                                                to="/"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Dashboard</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/moderator-info"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Personal Details</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/moderator-profile"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Profile</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/moderator-notification"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Notification</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/login"
+                                                onClick={logoutHandler}
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Logout</span>
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        )}
+
+                        {currentUser && isParent && (
+                            <div className="navmenu hidden w-full flex-wrap justify-end items-center mb-16 space-y-8 p-6 border border-gray-100 rounded-3xl shadow-2xl shadow-gray-300/20 bg-white dark:bg-gray-800 lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none dark:shadow-none dark:border-gray-700 lg:border-0">
+                                <div className="text-gray-600 dark:text-gray-300 lg:pr-4">
+                                    <ul className="space-y-6 tracking-wide font-medium text-base lg:text-md lg:flex lg:space-y-0">
+                                        <li>
+                                            <NavLink
+                                                to="/"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Dashboard</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/parent-info"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Personal Details</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/parent-profile"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Profile</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/parent-notification"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Notification</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/login"
+                                                onClick={logoutHandler}
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Logout</span>
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        )}
+
+                        {currentUser && isChild && (
+                            <div className="navmenu hidden w-full flex-wrap justify-end items-center mb-16 space-y-8 p-6 border border-gray-100 rounded-3xl shadow-2xl shadow-gray-300/20 bg-white dark:bg-gray-800 lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none dark:shadow-none dark:border-gray-700 lg:border-0">
+                                <div className="text-gray-600 dark:text-gray-300 lg:pr-4">
+                                    <ul className="space-y-6 tracking-wide font-medium text-base lg:text-md lg:flex lg:space-y-0">
+                                        <li>
+                                            <NavLink
+                                                to="/"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Dashboard</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/child-info"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Personal Details</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/child-profile"
+                                                className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
+                                            >
+                                                <span>Profile</span>
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/child-notification"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
                                                 <span>Notification</span>

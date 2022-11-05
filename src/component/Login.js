@@ -21,7 +21,7 @@ const Login = () => {
                 }
             );
             dispatch(login(res.data));
-            navigate("/dashboard");
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
