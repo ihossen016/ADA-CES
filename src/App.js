@@ -19,10 +19,10 @@ import { useState } from "react";
 function App() {
     const { currentUser } = useSelector(state => state.user);
 
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(true);
     const [isModerator, setIsModerator] = useState(false);
     const [isParent, setIsParent] = useState(false);
-    const [isChild, setIsChild] = useState(true);
+    const [isChild, setIsChild] = useState(false);
 
     console.log("user", currentUser);
 

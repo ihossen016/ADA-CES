@@ -33,7 +33,10 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                     ADA
                                 </span>
                             </NavLink>
-                            <label className="peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer lg:hidden">
+                            <label
+                                for="hbr"
+                                className="peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer lg:hidden"
+                            >
                                 <div
                                     aria-hidden="true"
                                     className="m-auto h-0.5 w-6 rounded bg-gray-900 dark:bg-gray-300 transition duration-300"
@@ -62,7 +65,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/info"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Personal Details</span>
+                                                <span>Profile</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -70,7 +73,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/profile"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Profile</span>
+                                                <span>Details</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -78,7 +81,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/notification"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Notification</span>
+                                                <span>Notifications</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -112,7 +115,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/moderator-info"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Personal Details</span>
+                                                <span>Profile</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -120,7 +123,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/moderator-profile"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Profile</span>
+                                                <span>Details</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -128,7 +131,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/moderator-notification"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Notification</span>
+                                                <span>Notifications</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -162,7 +165,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/parent-info"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Personal Details</span>
+                                                <span>Profile</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -170,7 +173,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/parent-profile"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Profile</span>
+                                                <span>Details</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -178,7 +181,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/parent-notification"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Notification</span>
+                                                <span>Notifications</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -212,7 +215,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/child-info"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Personal Details</span>
+                                                <span>Profile</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -220,7 +223,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/child-profile"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Profile</span>
+                                                <span>Details</span>
                                             </NavLink>
                                         </li>
                                         <li>
@@ -228,7 +231,7 @@ const Navbar = ({ isAdmin, isChild, isModerator, isParent }) => {
                                                 to="/child-notification"
                                                 className="block md:px-4 transition hover:text-indigo-600 dark:hover:text-primaryLight"
                                             >
-                                                <span>Notification</span>
+                                                <span>Notifications</span>
                                             </NavLink>
                                         </li>
                                         <li>
